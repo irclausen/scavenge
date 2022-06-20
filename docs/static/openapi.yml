@@ -51546,6 +51546,8 @@ definitions:
       the connection handshake.
   irclausen.scavenge.scavenge.MsgCommitSolutionResponse:
     type: object
+  irclausen.scavenge.scavenge.MsgRevealSolutionResponse:
+    type: object
   irclausen.scavenge.scavenge.MsgSubmitScavengeResponse:
     type: object
   irclausen.scavenge.scavenge.Params:
