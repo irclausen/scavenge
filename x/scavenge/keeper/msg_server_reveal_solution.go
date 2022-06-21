@@ -24,7 +24,7 @@ func (k msgServer) RevealSolution(goCtx context.Context, msg *types.MsgRevealSol
 	_, isFound := k.GetCommit(ctx, solutionScavengerHashString)
 	// return and error if a commit doesn't exist
 	if !isFound {
-		return nil, sdkerrors.Wrap(sdkerrors. ErrInvalidRequest, "Commit with that hash doesn't exist")
+		return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "Commit with that hash doesn't exist")
 	}
 	// find a hash of the solution
 	var solutionHash = sha256.Sum256([]byte(msg.Solution))
@@ -41,7 +41,7 @@ func (k msgServer) RevealSolution(goCtx context.Context, msg *types.MsgRevealSol
 	_, err := sdk.AccAddressFromBech32(scavenge.Scavenger)
 	// return and error if a scavenge has already been solved
 	if err == nil {
-		return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest. "Scavenge has already been solved")
+		return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "Scavenge has already been solved")
 	}
 	// save the scavenger address to the scavenge
 	scavenge.Scavenger = msg.Creator
